@@ -1,0 +1,52 @@
+﻿body {
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+
+.dl-horizontal dt { white-space: normal; }
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+input,
+select,
+textarea { max-width: 280px; }
+
+.alert { margin-top: 10px; }
+
+.center { margin: 0 auto; }
+
+.float-right { float: right; }
+
+#search-form { height: 300px; }
+
+.col-centered { line-height: 300px; }
+
+.input-group-btn { width: 0%; }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: rgba(92, 184, 92, 0.7);
+    color: white;
+}
+
+.table-hover > tbody > tr:hover > td > a { color: white; }
+
+.table-hover > tbody > tr > td > a { color: #4cae4c; }
+
+.small-margin-top { margin-top: 10px; }
+
+.medium-margin-top { margin-top: 20px; }
+
+.field-validation-error { color: red; }
+
+.input-validation-error { border-color: red; }

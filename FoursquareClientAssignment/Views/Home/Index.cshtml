@@ -1,0 +1,23 @@
+﻿@model FoursquareClientAssignment.Models.IndexModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("SearchResults", "Home"))
+{
+    <div class="form-group" id="search-form">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 col-centered">
+                <div class="input-group input-group-lg">
+                    @Html.TextBoxFor(model => model.Query, new {placeholder = "Search for venues...", @class = "form-control"})
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 col-centered">@Html.ValidationMessageFor(model => model.Query)</div>
+        </div>
+    </div>
+}

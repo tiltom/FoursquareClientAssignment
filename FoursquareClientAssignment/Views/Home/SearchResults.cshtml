@@ -1,0 +1,56 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@model List<FoursquareClientAssignment.Models.VenueSearchResultModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Hidden("query", "@ViewBag.VenueQuery")
+
+<h2>Venues found for the search query "@ViewBag.VenueQuery"</h2> This query has been searched @ViewBag.QueryResultCount time(s)
+
+@if (Model.Count > 0)
+{
+    <table class="table table-hover medium-margin-top">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(item => item.ElementAt(0).Name)</th>
+                <th>@Html.DisplayNameFor(item => item.ElementAt(0).CheckingCount)</th>
+                <th>@Html.DisplayNameFor(item => item.ElementAt(0).HereNow)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                <tr>
+                    <td><a href=@String.Format("https://foursquare.com/v/{0}", item.Id) target="_blank">@item.Name</a></td>
+                    <td>@item.CheckingCount</td>
+                    <td>@item.HereNow</td>
+                </tr>
+            }
+
+            <tr id="endOfTable"></tr>
+
+        </tbody>
+    </table>
+
+    if (Model.Count >= 10)
+    {
+        <button id="showMore" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Show more</button>
+    }
+}
+
+@if (Model.Count == 0)
+{
+    <p class="small-margin-top">
+    @Html.Raw("No venues found for this query, please go back to search and try again with different keywords.")
+    </p>
+}
+
+<a href="@Url.Action("Index")" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to search</a>
+
+
+@section scripts{
+    <script src="~/Scripts/Custom scripts/ShowMore.js">
+    </script>
+}

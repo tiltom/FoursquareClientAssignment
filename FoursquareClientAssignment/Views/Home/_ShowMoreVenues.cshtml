@@ -1,0 +1,10 @@
+﻿@model List<FoursquareClientAssignment.Models.VenueSearchResultModel>
+
+@foreach (var item in @Model)
+{
+    <tr>
+        <td><a href=@String.Format("https://foursquare.com/v/{0}", item.Id) target="_blank">@item.Name</a></td>
+        <td>@item.CheckingCount</td>
+        <td>@item.HereNow</td>
+    </tr>
+}
