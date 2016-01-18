@@ -1,5 +1,8 @@
 ﻿namespace FoursquareClientAssignment.Constants
 {
+    /// <summary>
+    ///     Class with constants used in HomeController and HomeService
+    /// </summary>
     public class HomeConstant
     {
         public const string ClientId = "ClientId";

@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(item => item.ElementAt(0).Name)</th>
-                <th>@Html.DisplayNameFor(item => item.ElementAt(0).CheckingCount)</th>
+                <th>@Html.DisplayNameFor(item => item.ElementAt(0).CheckinCount)</th>
                 <th>@Html.DisplayNameFor(item => item.ElementAt(0).HereNow)</th>
             </tr>
         </thead>
@@ -24,7 +24,7 @@
             {
                 <tr>
                     <td><a href=@String.Format("https://foursquare.com/v/{0}", item.Id) target="_blank">@item.Name</a></td>
-                    <td>@item.CheckingCount</td>
+                    <td>@item.CheckinCount</td>
                     <td>@item.HereNow</td>
                 </tr>
             }

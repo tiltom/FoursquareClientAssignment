@@ -5,20 +5,9 @@
     $(function() {
 
         var loadCount = 1;
-        var loading = $("#loading");
         $("#showMore").on("click", function(e) {
 
             e.preventDefault();
-
-            $(document).on({
-                ajaxStart: function() {
-                    loading.show();
-                },
-                ajaxStop: function() {
-                    loading.hide();
-                }
-            });
-
 
             var url = "/Home/ShowMoreVenues/";
             var venueQuery = $("#query").val();
@@ -31,12 +20,12 @@
                 success: function(data) {
 
                     if (data.length !== 0) {
-                        $(data.ModelString).insertBefore("#endOfTable").hide().fadeIn(2000);
+                        $(data.ModelString).insertBefore("#endOfTable").hide().fadeIn(1000);
                     }
 
                     var ajaxModelCount = data.ModelCount - (loadCount * 10);
                     if (ajaxModelCount <= 0) {
-                        $("#showMore").hide().fadeOut(2000);
+                        $("#showMore").hide().fadeOut(1000);
                     }
 
                 },
